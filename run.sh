@@ -1,0 +1,1 @@
+sudo docker-compose -f docker/local.yml run --rm -u root -p 8030:8030 ufotest_hello_world_example bash -c "$1"

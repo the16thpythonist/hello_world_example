@@ -1,0 +1,21 @@
+version: '3.2'
+
+services:
+
+  ufotest_hello_world_example:
+    image: ufotest_plugin
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    ports:
+      - "8030:8030"
+    restart: on-failure
+    environment:
+      UFOTEST_REPOSITORY: "https://github.com/the16thpythonist/ufotest.git"
+      TEST: 1
+    volumes:
+      - ..:/root/.ufotest/plugins/hello_world_example
+      - /tmp:/tmp
+
+volumes:
+  hello_world_example: {}
