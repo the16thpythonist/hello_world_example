@@ -1,3 +1,9 @@
+"""
+This text will be the short description of the plugin. The short
+description will for example be displayed in the plugin list view of the web interface.
+Make sure to write a short and concise description of the purpose of the plugin
+the details can then be viewed in the specific README.html
+"""
 import sys
 
 import click
@@ -33,10 +39,14 @@ def plugin_commands(value, config, context):
     value['hello_world'] = hello_world
     return value
 
+
 # HELLO WORLD TEST CASE
 # =====================
 
 class HelloWorldTest(AbstractTest):
+
+    name = 'hello_world'
+    description = 'Adds a hello world test result message'
 
     def run(self):
         message = 'Hello World'
